@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-grid{
+    width: 80vw;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    grid-template-rows: 0.1fr 0.2fr 0.4fr 0.4fr 0.3fr;
+    grid-template-areas: "nav1 nav1 nav1 nav1"
+    "title2 title2 title2 title2"
+    "caro1 caro1 caro1 caro1"
+    "text1 text1 text1 text1"
+    "footer1 footer1 footer1 footer1";
+    color: rgb(0, 0, 0);
+    font-family: 'Vollkorn', serif;
+
+    
+}
+/* NAV 1 */
+
+.grid-nav1{
+    box-sizing: border-box;
+    display: grid  ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 2fr;
+    grid-template-areas: 
+    "breadcrumb1 breadcrumb1 breadcrumb1 breadcrumb1"
+    "wear1 wear1 wear1 wear1"
+    "navbar1 navbar1 navbar1 navbar1";
+    grid-area: nav1; 
+    
+    
+}
+/* NAV 1 COMPONENTS */
+.breadcrumb1{
+    display: grid;
+    justify-content: end;
+    background-color: rgb(161, 161, 161);
+    grid-area: breadcrumb1;
+}
+.wear{
+    grid-area: wear1;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+}
+.navbar1{
+    grid-area: navbar1; 
+}
+
+/* title2 */
+.title2{
+    grid-area: title2;
+}
+
+/* CAROUSEL */
+.caro1{
+    grid-area: caro1;
+    box-sizing: border-box;
+   background-color: gray;
+}
+
+/* Text1 */
+.text1{
+    grid-area: text1;
+    box-sizing: border-box;
+}
+
+
+/* Footer */
+.grid-footer1{
+    grid-area: footer1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:"foot1" 
+    "foot2" 
+    "foot3";
+    background-color: rgb(29, 29, 29);
+    color: rgb(255, 255, 255);
+}
+.foot1{
+grid-area: foot1;
+}
+.foot2{
+ grid-area: foot2;   
+}
+.foot3{
+ grid-area: foot3;   
+}
+
+/* CONTAINER GENERAL */
+@media screen and (min-width:576px){
+    .container-grid{
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+        grid-template-rows: 0.1fr 0.2fr 0.4fr 0.33fr fit-content;
+        grid-template-areas: "nav1 nav1 nav1 nav1"
+        "title2 title2 title2 title2"
+        "caro1 caro1 caro1 caro1"
+        "text1 text1 text1 text1"
+        "footer1 footer1 footer1 footer1";
+    }
+    .grid-footer1{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:"foot1 foot2 foot3" ;
+        
+    }
+    
+}
+@media screen and (min-width:768px){
+    .container-grid{
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+        grid-template-rows: 0.1fr 0.2fr 0.4fr 0.33fr fit-content;
+        grid-template-areas: "nav1 nav1 nav1 nav1"
+        "title2 title2 title2 title2"
+        "text1 text1 caro1 caro1"
+        "text1 text1 text2 text2"
+        "footer1 footer1 footer1 footer1";
+    }
+    .ifra{
+        grid-area: text2;
+    }
+}
+    
+@media screen and (min-width:992px){
+    .container-grid{
+        width: 85vw;
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    grid-template-rows: 0.1fr 0.3fr 0.4fr 0.7fr 1fr 0.2fr;
+    grid-template-areas: "nav1 nav1 nav1 nav1"
+    "title2 title2 title2 title2"
+    "text1 text1 caro1 caro1"
+    "text1 text1 caro1 caro1"
+    "text1 text1 ifra ifra"
+    "footer1 footer1 footer1 footer1";
+    }
+    .ifra{
+        grid-area: ifra;
+        height: 250px;
+        display: grid;
+        justify-self: center;
+        background-color: bisque;
+    }
+}

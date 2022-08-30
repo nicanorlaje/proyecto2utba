@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-grid{
+    width: 80vw;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    grid-template-rows: 0.1fr 0.1fr 0.3fr 1fr 1fr 0.3fr 0.3fr fit-content;
+    grid-template-areas: "nav1 nav1 nav1 nav1"
+    "parallax1 parallax1 parallax1 parallax1"
+    "slide1 slide1 slide1 slide1"
+    "card1 card1 card1 card1"
+    "card2 card2 card2 card2"
+    "publicidad publicidad publicidad publicidad"
+    "forms1 forms1 forms1 forms1"
+    "footer1 footer1 footer1 footer1";
+    color: rgb(0, 0, 0);
+    font-family: 'Vollkorn', serif;
+    
+}
+/* NAV 1 */
+
+.grid-nav1{
+    box-sizing: border-box;
+    display: grid  ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 2fr;
+    grid-template-areas: 
+    "breadcrumb1 breadcrumb1 breadcrumb1 breadcrumb1"
+    "wear1 wear1 wear1 wear1"
+    "navbar1 navbar1 navbar1 navbar1";
+    grid-area: nav1; 
+    
+    
+}
+/* NAV 1 COMPONENTS */
+.breadcrumb1{
+    display: grid;
+    justify-content: end;
+    background-color: rgb(161, 161, 161);
+    grid-area: breadcrumb1;
+}
+.wear{
+    grid-area: wear1;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+}
+.navbar1{
+    grid-area: navbar1; 
+}
+/* PARALLAX */
+.grid-parallax1{
+    display: grid;
+    grid-area: parallax1;
+    background-image: url("../Assets/Imagenes/Stay\ foolish.jfif");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Carousel */
+.grid-slide1{
+    grid-area: slide1;
+}
+/* .img-slide{
+    height: 400px;
+    width: 200px;
+} */
+/* IBA A USAR ESTA CLASE QUE FUNCIONA, PARA ACHICAR Y AMOLDAR EL SLIDE DEPENDIENDO EL TAMAÑO DE LA PANTALLA. NO PUDE ENCONTRAR CÓMO CENTRAR LAS IMÁGENES ENTONCES PARA NO DEJAR EL ESPACIO TAN POCO ESTÉTICO QUE SE FORMA CUANDO LAS ACHICÁS PREFIERO DEJARLAS ASÍ POR AHORA. UN SALUDO MARCE! */
+
+.slide-width{
+    width: 75%;
+}
+/* Cards */
+.card-width{
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+.grid-card1{
+    box-sizing: border-box;
+    grid-area: card1;
+    font-size: 1rem;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.719);
+    width: 100%;
+}
+.grid-card1 img{
+    margin: 0 auto 0 auto;
+    width: 98%;
+    height: 200px;
+}
+
+.grid-card2{
+    box-sizing: border-box;
+    grid-area: card2;
+    font-size: 1rem;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.719);
+    width: 100%;
+}
+.grid-card2 img{
+    margin: 0 auto 0 auto;
+    width: 98%;
+    height: 200px;
+}
+.card-height{
+    height: 100%;
+}
+
+.grid-forms1{
+    grid-area: forms1;
+    background-color: rgba(128, 128, 128, 0.634);
+}
+.grid-novedades{
+    grid-area: publicidad;
+    box-sizing: border-box;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.novedades-iframe{
+    display:grid;
+    height: 85%;
+}
+.publicidad-imagen img{
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.grid-footer1{
+    grid-area: footer1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:"foot1" 
+    "foot2" 
+    "foot3";
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+.foot1{
+grid-area: foot1;
+}
+.foot2{
+ grid-area: foot2;   
+}
+.foot3{
+ grid-area: foot3;   
+}
+/* PARALLAX */
+@media screen and (max-width:576px){
+    .grid-parallax1{
+        max-height: 270px;
+    }
+}
+
+/* CONTAINER GENERAL */
+@media screen and (min-width:576px){
+    .container-grid{
+        grid-template-rows: 0.08fr 0.2fr 0.3fr 0.7fr 0.7fr 0.3fr 0.6fr 150px;
+        grid-template-areas: "nav1 nav1 nav1 nav1"
+        "parallax1 parallax1 parallax1 parallax1"
+        "slide1 slide1 slide1 slide1"
+        "card1 card1 card1 card1"
+        "card2 card2 card2 card2"
+        "publicidad publicidad publicidad publicidad"
+        "forms1 forms1 forms1 forms1"
+        "footer1 footer1 footer1 footer1";
+    }
+    .grid-parallax1{
+        max-height: 350px;
+    }   
+    .img-slide{
+        height: auto;
+        width: auto;
+    }
+    .slide-width{
+        width: 100%;
+    }
+    .grid-card1 img{
+        height: 200px;
+        width: fit-content;
+    }
+    .grid-card2 img{
+        height: 200px;
+        width: fit-content;
+    }
+    .card-height{
+        height: 100%;
+    }
+    .card-width{
+        width: fit-content;
+        margin: 0 auto 0 auto;
+    }
+    .grid-footer1{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:"foot1 foot2 foot3" ;
+        
+    }
+    .publicidad-imagen img{
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+}
+@media screen and (min-width:768px){
+    .container-grid{
+            grid-template-rows: 0.08fr 0.4fr 0.7fr 0.9fr 0.9fr 0.3fr 0.5fr 0.08fr;
+            grid-template-areas: "nav1 nav1 nav1 nav1"
+            "parallax1 parallax1 parallax1 parallax1"
+            "slide1 slide1 slide1 slide1"
+            "card1 card1 card1 card1"
+            "card2 card2 card2 card2"
+            "publicidad publicidad publicidad publicidad"
+            "forms1 forms1 forms1 forms1"
+            "footer1 footer1 footer1 footer1";
+    }
+    .grid-parallax1{
+        max-height: 400px;
+    }   
+    .grid-card1 img{
+        margin: 0 auto 0 auto;
+        height: 250px;
+    }
+    .grid-card2 img{
+        margin: 0 auto 0 auto;
+        height: 300px;
+    }
+    .card-width{
+        width: 98%;
+    }
+    .card-height{
+        height: auto;
+    }
+    .novedades-iframe{
+        grid-template-columns: 1fr 1fr;
+    }
+    .publicidad-imagen img{
+        height: 150px;
+        margin-bottom: 10px;
+    }
+}
+    
+@media screen and (min-width:992px){
+    .container-grid{
+        width: 85vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+        grid-template-rows: 0.2fr 0.20fr 0.25fr 0.25fr 0.25fr 0.25fr auto;
+        grid-template-areas: "nav1 nav1 nav1 nav1 nav1"
+        "parallax1 parallax1 parallax1 parallax1 parallax1"
+        "publicidad publicidad publicidad slide1 slide1"
+        "card1 card1 card1 card1 card1"
+        "card2 card2 card2 card2 card2"
+        "forms1 forms1 forms1 forms1 forms1"
+        "footer1 footer1 footer1 footer1 footer1";
+    }
+    .grid-parallax1{
+        max-height: 400px;
+    }
+    .grid-card1 img{
+        margin: 0 auto 0 auto;
+        height: 250px;
+    }
+    .grid-card2 img{
+        margin: 0 auto 0 auto;
+        height: 250px;
+    }
+    .card-width{
+        width: 98%;
+    }
+    .card-height{
+        height: auto;
+     }
+     .novedades-iframe{
+        grid-template-columns: 1fr;
+    }
+    .publicidad-imagen img{
+        height: 200px;
+        margin-bottom: 10px;
+    }
+}

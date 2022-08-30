@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-grid{
+    width: 80vw;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    grid-template-rows: 0.1fr 0.3fr 0.33fr 0.5fr 0.3fr;
+    grid-template-areas: "nav1 nav1 nav1 nav1"
+    "photo1 photo1 photo1 photo1"
+    "description1 description1 description1 description1"
+    "related1 related1 related1 related1"
+    "footer1 footer1 footer1 footer1";
+    color: rgb(0, 0, 0);
+    font-family: 'Vollkorn', serif;
+    
+}
+/* NAV 1 */
+
+.grid-nav1{
+    box-sizing: border-box;
+    display: grid  ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 2fr;
+    grid-template-areas: 
+    "breadcrumb1 breadcrumb1 breadcrumb1 breadcrumb1"
+    "wear1 wear1 wear1 wear1"
+    "navbar1 navbar1 navbar1 navbar1";
+    grid-area: nav1; 
+    
+    
+}
+/* NAV 1 COMPONENTS */
+.breadcrumb1{
+    display: grid;
+    justify-content: end;
+    background-color: rgb(161, 161, 161);
+    grid-area: breadcrumb1;
+}
+.wear{
+    grid-area: wear1;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+}
+.navbar1{
+    grid-area: navbar1; 
+}
+
+/* FOTO */
+.photo1{
+    grid-area: photo1;
+    box-sizing: border-box;
+    background-color: rgb(169, 169, 169);
+}
+.photo1 img{
+    height: 300px;
+    border: solid 1px black;
+    box-shadow: 2px 2px 2px;
+}
+
+
+/* Descripción */
+.description1{
+    grid-area: description1;
+    background-color: rgb(255, 255, 255);
+    color: white;
+}
+.units-1{
+    margin-left: 0.7rem;
+    font-size: 0.9rem;
+}
+
+
+/* Related */
+.related1{
+    grid-area: related1;
+    background-color: bisque;
+}
+.card-width{
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+.grid-card2{
+    box-sizing: border-box;
+    grid-area: card2;
+    font-size: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+.grid-card2 img{
+    margin: 0 auto 0 auto;
+    width: 98%;
+    height: 200px;
+}
+.card-height{
+    height: 100%;
+}
+
+
+/* Footer */
+.grid-footer1{
+    grid-area: footer1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:"foot1" 
+    "foot2" 
+    "foot3";
+    background-color: rgb(29, 29, 29);
+    color: rgb(255, 255, 255);
+}
+.foot1{
+grid-area: foot1;
+}
+.foot2{
+ grid-area: foot2;   
+}
+.foot3{
+ grid-area: foot3;   
+}
+
+/* CONTAINER GENERAL */
+@media screen and (min-width:576px){
+    .container-grid{
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+        grid-template-rows: 0.1fr 0.3fr 0.33fr 0.4fr fit-content;
+        grid-template-areas: "nav1 nav1 nav1 nav1"
+        "photo1 photo1 photo1 photo1"
+        "description1 description1 description1 description1"
+        "related1 related1 related1 related1"
+        "footer1 footer1 footer1 footer1";
+    }
+    .grid-footer1{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:"foot1 foot2 foot3" ;
+        
+    }
+    .grid-card2 img{
+        height: 200px;
+        width: fit-content;
+    }
+    
+}
+@media screen and (min-width:768px){
+    .container-grid{
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+        grid-template-rows: 0.1fr 0.3fr 0.33fr 0.4fr fit-content;
+        grid-template-areas: "nav1 nav1 nav1 nav1"
+        "photo1 photo1 photo1 photo1"
+        "description1 description1 description1 description1"
+        "related1 related1 related1 related1"
+        "footer1 footer1 footer1 footer1";
+    }
+    .grid-card2 img{
+        margin: 0 auto 0 auto;
+        height: 300px;
+    }
+    .card-width{
+        width: 98%;
+    }
+    .card-height{
+        height: auto;
+    }
+    
+}
+    
+@media screen and (min-width:992px){
+    .container-grid{
+        width: 85vw;
+        grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    grid-template-rows: 0.1fr 0.3fr 0.33fr 0.4fr fit-content;
+    grid-template-areas: "nav1 nav1 nav1 nav1"
+    "photo1 photo1 photo1 photo1"
+    "description1 description1 description1 description1"
+    "related1 related1 related1 related1"
+    "footer1 footer1 footer1 footer1";
+    }
+    .grid-card2 img{
+        margin: 0 auto 0 auto;
+        height: 250px;
+    }
+    .card-width{
+        width: 98%;
+    }
+    .card-height{
+        height: auto;
+     }
+
+}
